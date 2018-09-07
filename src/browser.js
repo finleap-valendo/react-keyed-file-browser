@@ -37,6 +37,7 @@ class RawFileBrowser extends React.Component {
     actions: PropTypes.node,
     showActionBar: PropTypes.bool.isRequired,
     canFilter: PropTypes.bool.isRequired,
+    handleClick: PropTypes.func.isRequired,
 
     group: PropTypes.func.isRequired,
     sort: PropTypes.func.isRequired,
@@ -73,7 +74,7 @@ class RawFileBrowser extends React.Component {
   static defaultProps = {
     showActionBar: true,
     canFilter: true,
-
+    handleClick: DefaultDetail,
     group: GroupByFolder,
     sort: SortByName,
 
@@ -332,7 +333,7 @@ class RawFileBrowser extends React.Component {
       fileRendererProps: this.props.fileRendererProps,
       folderRenderer: this.props.folderRenderer,
       folderRendererProps: this.props.folderRendererProps,
-
+      handleClick: this.props.handleClick,
       // browser state
       openFolders: this.state.openFolders,
       nameFilter: this.state.nameFilter,
