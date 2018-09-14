@@ -74,7 +74,7 @@ class BaseFile extends React.Component {
   handleFileClick = (event) => {
     if (event) {
         event.stopPropagation()
-        this.props.browserProps.handleClick(event)
+        this.props.browserProps.handleClick(event, this.props.fileKey)
     }
   }
   handleItemClick = (event) => {
